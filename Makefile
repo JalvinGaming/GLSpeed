@@ -4,5 +4,5 @@ SRC = src
 
 compile:
 	g++ $(SRC)/*.cpp $(INC) $(LIB) -c
-lib:
-	ar rcs bin/GLSpeed.a $(SRC)/*.o
+libset:
+	ar rcs bin/lib/GLSpeed.a *.o
