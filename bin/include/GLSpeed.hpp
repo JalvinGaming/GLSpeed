@@ -1,4 +1,6 @@
 #pragma once
+#include <glad/gl.h>
+#include <SDL2/SDL.h>
 SDL_Window *window;
 //Creates an SDL_Window and OpenGL context.
 void gls_CreateDisplay(const char* title, int x, int y, int width, int height, int vmaj, int vmin);

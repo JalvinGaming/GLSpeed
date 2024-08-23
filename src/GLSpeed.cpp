@@ -1,6 +1,4 @@
-#include <glad/gl.h>
 #define SDL_MAIN_HANDLED
-#include <SDL2/SDL.h>
 #include <GLSpeed.hpp>
 //Creates an SDL_Window and OpenGL context.
 void gls_CreateDisplay(const char* title, int x, int y, int width, int height, int vmaj, int vmin)
