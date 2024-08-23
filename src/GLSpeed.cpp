@@ -1,15 +1,15 @@
 #define SDL_MAIN_HANDLED
 #include <GLSpeed.hpp>
 //Creates an SDL_Window and OpenGL context.
-void gls_CreateDisplay(const char* title, int x, int y, int width, int height, int vmaj, int vmin, SDL_Window *wnd, SDL_GLContext ctx)
+void gls_CreateDisplay(const char* title, int x, int y, int width, int height, int vmaj, int vmin, SDL_Window** wnd, SDL_GLContext* ctx)
 {
     SDL_Init(SDL_INIT_VIDEO);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, vmaj);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, vmin);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
-    wnd = SDL_CreateWindow(title, x, y, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
-    ctx = SDL_GL_CreateContext(wnd);
+    *wnd = SDL_CreateWindow(title, x, y, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+    *ctx = SDL_GL_CreateContext(*wnd);
     int version = gladLoadGL((GLADloadfunc)SDL_GL_GetProcAddress);
 }
 //Creates a program from a vertex and fragment shader.
